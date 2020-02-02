@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://120.78.129.112:3306/blog?useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: Tianchao!!2019
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+logging:
+  level:
+    root: info
+    com.tc: debug
+  file: log/blog-pro.log
+mybatis:
+  mapper-locations: classpath:mappers/*Mapper.xml
+
+
+

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tc.dao.BlogMapper">
+    
+    <resultMap id="blogWithType" type="com.tc.po.Blog">
+        <id property="id" column="id"/>
+        <result property="title" column="title"/>
+        <result property="recommend" column="recommend"/>
+        <result property="updateTime" column="updateTime"/>
+        <association property="type" javaType="com.tc.po.Type" columnPrefix="t_">
+            <id column="id" property="id"/>
+            <result column="name" property="name"/>
+        </association>
+    </resultMap>
+    <!-- 查询博客 附带类型 -->
+    <select id="listBlog" resultMap="blogWithType" parameterType="com.tc.po.Blog">
+        select
+            b.id as id,
+            b.title as title,
+            b.recommend as recommend,
+            b.update_time as updateTime,
+            t.id as t_id,
+            t.name as t_name
+        from
+            t_blog b
+        left join t_type t on b.type_id = t.id
+        <where>
+            <if test="title!=null and title !=''">
+             and b.title like concat('%',#{title},'%')
+            </if>
+            <if test="typeId!=null">
+             and b.type_id = #{typeId}
+            </if>
+            <if test="recommend!=null">
+             and b.recommend = #{recommend}
+            </if>
+        </where>
+    </select>
+</mapper>

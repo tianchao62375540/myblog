@@ -1,0 +1,88 @@
+2020-02-01 16:27:11.534  INFO 13004 --- [restartedMain] com.tc.MyblogApplication                 : Starting MyblogApplication on PC-20170318GPWI with PID 13004 (D:\fight\myblog\target\classes started by Administrator in D:\fight\myblog)
+2020-02-01 16:27:11.539 DEBUG 13004 --- [restartedMain] com.tc.MyblogApplication                 : Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2020-02-01 16:27:11.541  INFO 13004 --- [restartedMain] com.tc.MyblogApplication                 : The following profiles are active: dev
+2020-02-01 16:27:11.673  INFO 13004 --- [restartedMain] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@792f190d: startup date [Sat Feb 01 16:27:11 CST 2020]; root of context hierarchy
+2020-02-01 16:27:13.115  INFO 13004 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$9315eb77] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-01 16:27:13.874  INFO 13004 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-02-01 16:27:13.901  INFO 13004 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-02-01 16:27:13.901  INFO 13004 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2020-02-01 16:27:13.907  INFO 13004 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.17] using APR version [1.6.3].
+2020-02-01 16:27:13.907  INFO 13004 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-02-01 16:27:13.907  INFO 13004 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-02-01 16:27:14.996  INFO 13004 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.0.2o  27 Mar 2018]
+2020-02-01 16:27:15.189  INFO 13004 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-02-01 16:27:15.189  INFO 13004 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3516 ms
+2020-02-01 16:27:15.270  INFO 13004 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2020-02-01 16:27:15.274  INFO 13004 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2020-02-01 16:27:15.275  INFO 13004 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2020-02-01 16:27:15.275  INFO 13004 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2020-02-01 16:27:15.275  INFO 13004 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2020-02-01 16:27:15.536  INFO 13004 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-02-01 16:27:16.840  INFO 13004 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-02-01 16:27:16.907  INFO 13004 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2020-02-01 16:27:16.926  INFO 13004 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-02-01 16:27:16.988  INFO 13004 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.2.17.Final}
+2020-02-01 16:27:16.989  INFO 13004 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2020-02-01 16:27:17.025  INFO 13004 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2020-02-01 16:27:17.214  INFO 13004 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-02-01 16:27:19.576  INFO 13004 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-02-01 16:27:20.331  INFO 13004 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-02-01 16:27:20.735  INFO 13004 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@792f190d: startup date [Sat Feb 01 16:27:11 CST 2020]; root of context hierarchy
+2020-02-01 16:27:20.786  WARN 13004 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-02-01 16:27:20.819  INFO 13004 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/admin/blogs],methods=[GET]}" onto public java.lang.String com.tc.web.admin.BlogController.blogs()
+2020-02-01 16:27:20.821  INFO 13004 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/admin],methods=[GET]}" onto public java.lang.String com.tc.web.admin.LoginController.loginPage()
+2020-02-01 16:27:20.823  INFO 13004 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/admin/login],methods=[POST]}" onto public java.lang.String com.tc.web.admin.LoginController.login(java.lang.String,java.lang.String,javax.servlet.http.HttpSession,org.springframework.web.servlet.mvc.support.RedirectAttributes)
+2020-02-01 16:27:20.823  INFO 13004 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/admin/logout],methods=[GET]}" onto public java.lang.String com.tc.web.admin.LoginController.logout(javax.servlet.http.HttpSession)
+2020-02-01 16:27:20.824  INFO 13004 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/admin/types],methods=[GET]}" onto public java.lang.String com.tc.web.admin.TypeController.types(org.springframework.data.domain.Pageable,org.springframework.ui.Model)
+2020-02-01 16:27:20.825  INFO 13004 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/admin/types/input],methods=[GET]}" onto public java.lang.String com.tc.web.admin.TypeController.input()
+2020-02-01 16:27:20.825  INFO 13004 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/admin/types],methods=[POST]}" onto public java.lang.String com.tc.web.admin.TypeController.post(com.tc.po.Type,org.springframework.web.servlet.mvc.support.RedirectAttributes)
+2020-02-01 16:27:20.825  INFO 13004 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/],methods=[GET]}" onto public java.lang.String com.tc.web.IndexController.index()
+2020-02-01 16:27:20.826  INFO 13004 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/blog],methods=[GET]}" onto public java.lang.String com.tc.web.IndexController.blog()
+2020-02-01 16:27:20.828  INFO 13004 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2020-02-01 16:27:20.829  INFO 13004 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2020-02-01 16:27:20.875  INFO 13004 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-02-01 16:27:20.875  INFO 13004 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-02-01 16:27:20.894  INFO 13004 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : Detected @ExceptionHandler methods in controllerExceptionHandler
+2020-02-01 16:27:21.010  INFO 13004 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-02-01 16:27:21.565  INFO 13004 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-02-01 16:27:21.602  INFO 13004 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2020-02-01 16:27:21.605  INFO 13004 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2020-02-01 16:27:21.611  INFO 13004 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2020-02-01 16:27:21.657  INFO 13004 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-02-01 16:27:21.661  INFO 13004 --- [restartedMain] com.tc.MyblogApplication                 : Started MyblogApplication in 10.787 seconds (JVM running for 12.093)
+2020-02-01 16:27:53.751  INFO 13004 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2020-02-01 16:27:53.751  INFO 13004 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2020-02-01 16:27:53.787  INFO 13004 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 36 ms
+2020-02-01 16:27:53.815  INFO 13004 --- [http-nio-8080-exec-1] com.tc.aspect.LogAspect                  : -doBefore-RequestLog:LogAspect.RequestLog(url=http://localhost:8080/, ip=0:0:0:0:0:0:0:1, classMethod=com.tc.web.IndexController.index, args=[])
+2020-02-01 16:27:53.820  INFO 13004 --- [http-nio-8080-exec-1] com.tc.aspect.LogAspect                  : -------------------doAfter--------------------
+2020-02-01 16:27:53.820  INFO 13004 --- [http-nio-8080-exec-1] com.tc.aspect.LogAspect                  : Result: index
+2020-02-01 16:42:20.204  INFO 13004 --- [http-nio-8080-exec-1] com.tc.aspect.LogAspect                  : -doBefore-RequestLog:LogAspect.RequestLog(url=http://localhost:8080/admin, ip=0:0:0:0:0:0:0:1, classMethod=com.tc.web.admin.LoginController.loginPage, args=[])
+2020-02-01 16:42:20.209  INFO 13004 --- [http-nio-8080-exec-1] com.tc.aspect.LogAspect                  : -------------------doAfter--------------------
+2020-02-01 16:42:20.209  INFO 13004 --- [http-nio-8080-exec-1] com.tc.aspect.LogAspect                  : Result: admin/login
+2020-02-01 16:42:21.018  INFO 13004 --- [http-nio-8080-exec-9] com.tc.aspect.LogAspect                  : -doBefore-RequestLog:LogAspect.RequestLog(url=http://localhost:8080/, ip=0:0:0:0:0:0:0:1, classMethod=com.tc.web.IndexController.index, args=[])
+2020-02-01 16:42:21.019  INFO 13004 --- [http-nio-8080-exec-9] com.tc.aspect.LogAspect                  : -------------------doAfter--------------------
+2020-02-01 16:42:21.019  INFO 13004 --- [http-nio-8080-exec-9] com.tc.aspect.LogAspect                  : Result: index
+2020-02-01 16:42:25.971  INFO 13004 --- [http-nio-8080-exec-3] com.tc.aspect.LogAspect                  : -doBefore-RequestLog:LogAspect.RequestLog(url=http://localhost:8080/admin, ip=0:0:0:0:0:0:0:1, classMethod=com.tc.web.admin.LoginController.loginPage, args=[])
+2020-02-01 16:42:25.972  INFO 13004 --- [http-nio-8080-exec-3] com.tc.aspect.LogAspect                  : -------------------doAfter--------------------
+2020-02-01 16:42:25.972  INFO 13004 --- [http-nio-8080-exec-3] com.tc.aspect.LogAspect                  : Result: admin/login
+2020-02-01 16:42:31.190  INFO 13004 --- [http-nio-8080-exec-8] com.tc.aspect.LogAspect                  : -doBefore-RequestLog:LogAspect.RequestLog(url=http://localhost:8080/admin/login, ip=0:0:0:0:0:0:0:1, classMethod=com.tc.web.admin.LoginController.login, args=[tianchao, 123456, org.apache.catalina.session.StandardSessionFacade@42dfec6, {}])
+2020-02-01 16:42:31.219  INFO 13004 --- [http-nio-8080-exec-8] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2020-02-01 16:42:31.455  INFO 13004 --- [http-nio-8080-exec-8] com.tc.aspect.LogAspect                  : -------------------doAfter--------------------
+2020-02-01 16:42:31.455  INFO 13004 --- [http-nio-8080-exec-8] com.tc.aspect.LogAspect                  : Result: admin/index
+2020-02-01 16:42:34.753  INFO 13004 --- [http-nio-8080-exec-9] com.tc.aspect.LogAspect                  : -doBefore-RequestLog:LogAspect.RequestLog(url=http://localhost:8080/admin/types;jsessionid=AFC0F947D0094CAA556450F162A1C225, ip=0:0:0:0:0:0:0:1, classMethod=com.tc.web.admin.TypeController.types, args=[Page request [number: 0, size 10, sort: id: DESC], {}])
+2020-02-01 16:42:35.294  INFO 13004 --- [http-nio-8080-exec-9] com.tc.aspect.LogAspect                  : -------------------doAfter--------------------
+2020-02-01 16:42:35.294  INFO 13004 --- [http-nio-8080-exec-9] com.tc.aspect.LogAspect                  : Result: admin/types
+2020-02-01 16:42:35.791  INFO 13004 --- [http-nio-8080-exec-4] com.tc.aspect.LogAspect                  : -doBefore-RequestLog:LogAspect.RequestLog(url=http://localhost:8080/admin/blogs, ip=0:0:0:0:0:0:0:1, classMethod=com.tc.web.admin.BlogController.blogs, args=[])
+2020-02-01 16:42:35.795  INFO 13004 --- [http-nio-8080-exec-4] com.tc.aspect.LogAspect                  : -------------------doAfter--------------------
+2020-02-01 16:42:35.796  INFO 13004 --- [http-nio-8080-exec-4] com.tc.aspect.LogAspect                  : Result: admin/blogs
+2020-02-01 16:42:36.594  INFO 13004 --- [http-nio-8080-exec-6] com.tc.aspect.LogAspect                  : -doBefore-RequestLog:LogAspect.RequestLog(url=http://localhost:8080/admin/types, ip=0:0:0:0:0:0:0:1, classMethod=com.tc.web.admin.TypeController.types, args=[Page request [number: 0, size 10, sort: id: DESC], {}])
+2020-02-01 16:42:37.108  INFO 13004 --- [http-nio-8080-exec-6] com.tc.aspect.LogAspect                  : -------------------doAfter--------------------
+2020-02-01 16:42:37.108  INFO 13004 --- [http-nio-8080-exec-6] com.tc.aspect.LogAspect                  : Result: admin/types
+2020-02-01 16:42:38.223  INFO 13004 --- [http-nio-8080-exec-10] com.tc.aspect.LogAspect                  : -doBefore-RequestLog:LogAspect.RequestLog(url=http://localhost:8080/admin/types, ip=0:0:0:0:0:0:0:1, classMethod=com.tc.web.admin.TypeController.types, args=[Page request [number: 0, size 10, sort: id: DESC], {}])
+2020-02-01 16:42:38.725  INFO 13004 --- [http-nio-8080-exec-10] com.tc.aspect.LogAspect                  : -------------------doAfter--------------------
+2020-02-01 16:42:38.725  INFO 13004 --- [http-nio-8080-exec-10] com.tc.aspect.LogAspect                  : Result: admin/types
+2020-02-01 16:42:39.089  INFO 13004 --- [http-nio-8080-exec-7] com.tc.aspect.LogAspect                  : -doBefore-RequestLog:LogAspect.RequestLog(url=http://localhost:8080/admin/blogs, ip=0:0:0:0:0:0:0:1, classMethod=com.tc.web.admin.BlogController.blogs, args=[])
+2020-02-01 16:42:39.089  INFO 13004 --- [http-nio-8080-exec-7] com.tc.aspect.LogAspect                  : -------------------doAfter--------------------
+2020-02-01 16:42:39.089  INFO 13004 --- [http-nio-8080-exec-7] com.tc.aspect.LogAspect                  : Result: admin/blogs
