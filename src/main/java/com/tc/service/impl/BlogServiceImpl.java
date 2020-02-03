@@ -141,4 +141,16 @@ public class BlogServiceImpl implements BlogService {
         blogMapper.deleteByPrimaryKey(id);
         blogTagsMapper.delete(new BlogTags().setBlogsId(id));
     }
+
+    /**
+     * 推荐的博客
+     *
+     * @param size
+     * @return
+     */
+    @Override
+    public List<Blog> listBlogForRecommend(Integer size) {
+        List<Blog> blogs = blogMapper.selectListBlogForRecommend(size);
+        return blogs;
+    }
 }

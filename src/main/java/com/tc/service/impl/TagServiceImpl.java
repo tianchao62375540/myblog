@@ -91,4 +91,16 @@ public class TagServiceImpl implements TagService {
     public List<Tag> selectAll() {
         return tagMapper.selectAll();
     }
+
+    /**
+     * 查询置顶标签 （前端）
+     *
+     * @param size
+     * @return
+     */
+    @Override
+    public List<Tag> selectTagTop(Integer size) {
+        List<Tag> tags = tagMapper.selectTagTop(size);
+        return tags;
+    }
 }

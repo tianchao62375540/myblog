@@ -17,6 +17,7 @@ public class PageResult<T> {
     private Boolean first;
     private Boolean last;
     private Integer number;
+    private Long total;
 
     public static <T> Builder builder(T type){
          return new Builder<T>();
@@ -30,6 +31,7 @@ public class PageResult<T> {
             result.setLast(pageInfo.isIsLastPage());
             result.setTotalPages(pageInfo.getPages());
             result.setNumber(pageInfo.getPageNum());
+            result.setTotal(pageInfo.getTotal());
             return result;
         }
     }

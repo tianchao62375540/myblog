@@ -4,15 +4,16 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.tc.dao.BlogMapper">
     
-    <resultMap id="blogWithType" type="com.tc.po.Blog">
+    <resultMap id="blogWithType" type="com.tc.po.Blog" autoMapping="true">
         <id property="id" column="id"/>
-        <result property="title" column="title"/>
-        <result property="recommend" column="recommend"/>
-        <result property="updateTime" column="updateTime"/>
-        <result property="published" column="published"/>
         <association property="type" javaType="com.tc.po.Type" columnPrefix="t_">
             <id column="id" property="id"/>
             <result column="name" property="name"/>
+        </association>
+        <association property="user" javaType="com.tc.po.User" columnPrefix="u_">
+            <id column="id" property="id"/>
+            <result column="nickname" property="nickname"/>
+            <result column="avatar" property="avatar"/>
         </association>
     </resultMap>
     <!-- 查询博客 附带类型 -->
@@ -23,11 +24,18 @@
             b.recommend as recommend,
             b.update_time as updateTime,
             b.published as published,
+            b.first_picture as firstPicture,
+            b.views as views,
+            b.description as description,
             t.id as t_id,
-            t.name as t_name
+            t.name as t_name,
+            u.id as u_id,
+            u.nickname as u_nickname,
+            u.avatar as u_avatar
         from
             t_blog b
         left join t_type t on b.type_id = t.id
+        left join t_user u on b.user_id = u.id
         <where>
             <if test="title!=null and title !=''">
              and b.title like concat('%',#{title},'%')
@@ -39,5 +47,16 @@
              and b.recommend = #{recommend}
             </if>
         </where>
+    </select>
+    <!-- 查询推荐博客 -->
+    <select id="selectListBlogForRecommend" parameterType="java.lang.Long" resultType="com.tc.po.Blog">
+      select
+        t.id,
+        t.title
+      from
+        t_blog t
+      where t.recommend = 1
+      order by t.update_time desc
+      limit ${size}
     </select>
 </mapper>

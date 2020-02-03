@@ -50,14 +50,14 @@ public class TypeController {
     @GetMapping("/types/input")
     public String input(Model model){
         model.addAttribute("type", new Type());
-        return "/admin/types-input";
+        return "admin/types-input";
     }
 
     @GetMapping("/types/{id}/input")
     public String editInput(@PathVariable("id") Long id, Model model){
         Type type = typeService.getType(id);
         model.addAttribute("type",type);
-        return "/admin/types-input";
+        return "admin/types-input";
     }
 
     /**

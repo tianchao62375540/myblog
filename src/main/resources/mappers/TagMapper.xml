@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tc.dao.TagMapper">
+
+    <select id="selectTagTop" resultType="com.tc.po.Tag" parameterType="java.lang.Integer">
+        select
+            t.id,
+            t.name,
+            count(bt.blogs_id) as blogCount
+        from
+            t_tag t
+            left join t_blog_tags bt on t.id = bt.tags_id
+        GROUP BY t.id,t.name
+        order by blogCount desc
+        <if test="size!=null">
+            limit ${size}
+        </if>
+    </select>
+</mapper>

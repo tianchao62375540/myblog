@@ -26,6 +26,9 @@ public class Tag {
 
     private String name;
 
-    @ManyToMany(mappedBy = "tags")
+    @Transient
+    private Integer blogCount;
+
+    @Transient
     private List<Blog> blogs = new ArrayList<>();
 }

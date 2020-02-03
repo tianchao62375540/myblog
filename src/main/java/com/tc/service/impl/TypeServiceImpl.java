@@ -162,6 +162,7 @@ public class TypeServiceImpl implements TypeService {
      */
     @Override
     public List<Type> listTypeTop(int size) {
-        return null;
+        List<Type> types = typeMapper.selectTypeTop(size);
+        return types;
     }
 }

@@ -31,4 +31,11 @@ public interface TagService {
     void delete(Long id);
 
     List<Tag> selectAll();
+
+    /**
+     * 查询置顶标签 （前端）
+     * @param size
+     * @return
+     */
+    List<Tag> selectTagTop(Integer size);
 }

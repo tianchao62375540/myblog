@@ -31,7 +31,9 @@ public class Type {
     @NotBlank(message = "分类名称不能为空1")
     private String name;
 
+    @Transient
+    private Long blogCount;
 
-    @OneToMany(mappedBy = "type")
+    @Transient
     private List<Blog> blogs = new ArrayList<>();
 }

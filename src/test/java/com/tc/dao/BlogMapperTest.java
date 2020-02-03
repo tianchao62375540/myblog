@@ -50,4 +50,9 @@ public class BlogMapperTest {
         blog.setUpdateTime(new Date());
         blogMapper.insert(blog);
     }
+    @Test
+    public void testSelectListBlogForRecommend(){
+        List<Blog> blogs = blogMapper.selectListBlogForRecommend(3);
+        blogs.stream().forEach(System.out::println);
+    }
 }

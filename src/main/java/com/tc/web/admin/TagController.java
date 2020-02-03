@@ -31,7 +31,7 @@ public class TagController {
     @GetMapping("/tags/input")
     public String input(Model model){
         model.addAttribute("tag", new Tag());
-        return "/admin/tags-input";
+        return "admin/tags-input";
     }
     /**
      * 跳转修改
@@ -41,7 +41,7 @@ public class TagController {
     @GetMapping("/tags/{id}/input")
     public String input(@PathVariable("id") Long id, Model model){
         model.addAttribute("tag", tagService.getTag(id));
-        return "/admin/tags-input";
+        return "admin/tags-input";
     }
     /**
      * 添加标签

@@ -2,10 +2,7 @@ package com.tc.dao;
 
 import com.tc.po.Blog;
 import com.tc.po.Type;
-import org.apache.ibatis.annotations.One;
-import org.apache.ibatis.annotations.Result;
-import org.apache.ibatis.annotations.Results;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 import tk.mybatis.mapper.common.Mapper;
 
 import java.util.List;
@@ -48,4 +45,10 @@ public interface BlogMapper extends Mapper<Blog> {
             @Result(property = "type",javaType = Type.class,one = @One)
     })*/
     List<Blog> listBlog(Blog condition);
+    /**
+     * 查询推荐博客
+     * @param size
+     * @return
+     */
+    List<Blog> selectListBlogForRecommend(@Param("size") Integer size);
 }

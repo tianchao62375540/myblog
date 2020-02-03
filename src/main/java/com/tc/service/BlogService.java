@@ -4,6 +4,8 @@ import com.github.pagehelper.Page;
 import com.tc.po.Blog;
 import com.tc.po.PageResult;
 
+import java.util.List;
+
 /**
  * @Auther: tianchao
  * @Date: 2020/2/2 17:58
@@ -46,4 +48,11 @@ public interface BlogService {
      * @param id
      */
     void deleteBlog(Long id);
+
+    /**
+     * 推荐的博客
+     * @param size
+     * @return
+     */
+    List<Blog> listBlogForRecommend(Integer size);
 }
