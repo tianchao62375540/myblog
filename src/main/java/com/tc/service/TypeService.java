@@ -65,4 +65,11 @@ public interface TypeService {
      * @return
      */
     List<Type> selectAll();
+
+    /**
+     * 首页置顶分类
+     * @param size
+     * @return
+     */
+    List<Type> listTypeTop(int size);
 }

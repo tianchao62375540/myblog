@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.Date;
 import java.util.List;
 
 import static org.junit.Assert.*;
@@ -30,5 +31,23 @@ public class BlogMapperTest {
         blog.setRecommend(true);
         List<Blog> blogs = blogMapper.listBlog(blog);
         System.out.println(blogs);
+    }
+
+    //@Test
+    public void testSaveBlogs(){
+        Blog blog = new Blog();
+        blog.setTitle("first");
+        blog.setContent("xxxx");
+        blog.setFirstPicture("https://picsum.photos/id/1/800/450");
+        blog.setFlag("1");
+        blog.setViews(0);
+        blog.setAppreciation(true);
+        blog.setShareStatement(true);
+        blog.setCommentabled(true);
+        blog.setPublished(true);
+        blog.setRecommend(true);
+        blog.setCreateTime(new Date());
+        blog.setUpdateTime(new Date());
+        blogMapper.insert(blog);
     }
 }

@@ -153,4 +153,15 @@ public class TypeServiceImpl implements TypeService {
     public List<Type> selectAll() {
         return typeMapper.selectAll();
     }
+
+    /**
+     * 首页置顶分类
+     *
+     * @param size
+     * @return
+     */
+    @Override
+    public List<Type> listTypeTop(int size) {
+        return null;
+    }
 }

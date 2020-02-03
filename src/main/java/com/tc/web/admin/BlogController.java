@@ -1,19 +1,13 @@
 package com.tc.web.admin;
 
-import com.tc.po.Blog;
-import com.tc.po.PageResult;
-import com.tc.po.Tag;
-import com.tc.po.Type;
+import com.tc.po.*;
 import com.tc.service.BlogService;
 import com.tc.service.TagService;
 import com.tc.service.TypeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpSession;
@@ -44,21 +38,48 @@ public class BlogController {
      */
     @GetMapping("/blogs/input")
     public String input(Model model){
-        model.addAttribute("blog", new Blog());
+        setTagAndType(model);
+        model.addAttribute("blog", new Blog().setType(new Type()));
+        return "admin/blogs-input";
+    }
+
+    private void setTagAndType(Model model) {
         List<Type> types = typeService.selectAll();
         model.addAttribute("types", types);
         List<Tag> tags = tagService.selectAll();
         model.addAttribute("tags", tags);
+    }
+
+    /**
+     * 跳转修改
+     * @param model
+     * @return
+     */
+    @GetMapping("/blogs/{id}/input")
+    public String editInput(@PathVariable("id") Long id, Model model){
+        setTagAndType(model);
+        Blog blog = blogService.getBlog(id);
+        blog.init();
+        model.addAttribute("blog",blog);
         return "admin/blogs-input";
     }
+    /**
+     *新增 修改
+     * @param blog
+     * @param httpSession
+     * @param attributes
+     * @return
+     */
     @PostMapping("/blogs")
     public String post(Blog blog, HttpSession httpSession, RedirectAttributes attributes){
-        httpSession.getAttribute("user");
+        String opt = blog.getId()==null?"新增":"修改";
+        User user = (User) httpSession.getAttribute("user");
+        blog.setUserId(user.getId());
         Blog b = blogService.saveBlog(blog);
         if (b == null){
-            attributes.addFlashAttribute("message","新增失败");
+            attributes.addFlashAttribute("message",opt+"失败");
         }else{
-            attributes.addFlashAttribute("message","新增成功");
+            attributes.addFlashAttribute("message",opt+"成功");
         }
         return "redirect:/admin/blogs";
     }
@@ -101,4 +122,16 @@ public class BlogController {
         return "admin/blogs :: blogList";
     }
 
+    /**
+     * 删除
+     * @param id
+     * @param attributes
+     * @return
+     */
+    @GetMapping("/blogs/{id}/delete")
+    public String delete(@PathVariable("id") Long id,RedirectAttributes attributes){
+        blogService.deleteBlog(id);
+        attributes.addFlashAttribute("message", "删除成功");
+        return "redirect:/admin/blogs";
+    }
 }

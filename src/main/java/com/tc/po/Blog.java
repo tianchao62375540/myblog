@@ -2,12 +2,16 @@ package com.tc.po;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.experimental.Accessors;
+import org.apache.commons.lang3.StringUtils;
+import org.springframework.util.CollectionUtils;
 import tk.mybatis.mapper.annotation.KeySql;
 
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * @Auther: tianchao
@@ -17,6 +21,7 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @Entity
+@Accessors(chain = true)
 @Table(name="t_blog")
 public class Blog {
     /**
@@ -46,21 +51,25 @@ public class Blog {
      */
     private Integer views;
     /**
+     * 博客描述
+     */
+    private String description;
+    /**
      * 是否赞赏
      */
-    private boolean appreciation;
+    private Boolean appreciation;
     /**
      * 是否分享
      */
-    private boolean shareStatement;
+    private Boolean shareStatement;
     /**
      *是否开启评论
      */
-    private boolean commentabled;
+    private Boolean commentabled;
     /**
      * 是否发布
      */
-    private boolean published;
+    private Boolean published;
     /**
      * 是否推荐
      */
@@ -80,6 +89,21 @@ public class Blog {
      */
     private Long userId;
 
+    public void init(){
+        this.tagIds = tagsToIds(tags);
+    }
+    private String tagsToIds(List<Tag> tags){
+        if (tags==null||tags.isEmpty()){
+            return null;
+        }
+        return StringUtils.join(tags.stream().map(Tag::getId).collect(Collectors.toList()), ",");
+    }
+
+    /**
+     * 标签id集合
+     */
+    @Transient
+    private String tagIds;
 
     /**
      *

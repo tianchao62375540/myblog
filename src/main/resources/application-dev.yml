@@ -1,7 +1,7 @@
 spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://120.78.129.112:3306/blog?useUnicode=true&characterEncoding=utf-8
+    url: jdbc:mysql://120.78.129.112:3306/blog?useUnicode=true&characterEncoding=utf-8&useSSL=false
     username: root
     password: Tianchao!!2019
   jpa:
@@ -16,6 +16,8 @@ logging:
   file: log/blog-pro.log
 mybatis:
   mapper-locations: classpath:mappers/*Mapper.xml
+  #configuration:
+  #  map-underscore-to-camel-case: true
 
 
 
